@@ -22,6 +22,20 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+
+app.get('/about-us', (req, res) => {
+  const aboutUsData = {
+    paragraphs: [
+      "My name is Ibrahim Sheikh and I'm a senior at NYU pursuing a joint major in computer science and data science.",
+      "I work with Dr. Pascal Wallisch in the Fox Lab to investigate music, moods, and emotions. I'm also working on a robotics project with Dr. Lerrel Pinto. Outside of work, I enjoy walking with no purpose and I'm always down to get coffee. ",
+      "I love to play the piano but don't know how to..."
+    ],
+    imageUrl: "/myself.png"
+  };
+
+  res.json(aboutUsData);
+});
+
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
